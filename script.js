@@ -38,7 +38,7 @@ function handleTouchEnd() {
   const tapLength = currentTime - lastTapTime;
   if (tapLength < 300 && tapLength > 0) {
     // ダブルタップ検出
-    window.location.href = 'http://127.0.0.1:5500/indexHP.html';
+    window.location.href = 'https://taketoichi.github.io/GroupingMain/';
   }
   lastTapTime = currentTime;
   setTimeout(() => {
@@ -49,6 +49,6 @@ function handleTouchEnd() {
 function handleClick() {
   if (!touchDetected) {
     // クリックイベント
-    window.location.href = 'http://127.0.0.1:5500/indexHP.html';
+    window.location.href = 'https://taketoichi.github.io/GroupingMain/';
   }
 }
