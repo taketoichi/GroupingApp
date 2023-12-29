@@ -1,20 +1,54 @@
-document.addEventListener("mousemove", (e) => {
-  const mouseX = e.clientX;
-  const mouseY = e.clientY;
+let lastTapTime = 0;
+let touchDetected = false;
 
+document.addEventListener("mousemove", handleMouseMove);
+document.addEventListener("touchmove", handleTouchMove);
+document.addEventListener("touchend", handleTouchEnd);
+document.body.addEventListener('click', handleClick);
+
+function handleMouseMove(e) {
+  if (!touchDetected) {
+    moveCursorAndCircles(e.clientX, e.clientY);
+  }
+}
+
+function handleTouchMove(e) {
+  touchDetected = true;
+  e.preventDefault();
+  const touchX = e.touches[0].clientX;
+  const touchY = e.touches[0].clientY;
+  moveCursorAndCircles(touchX, touchY);
+}
+
+function moveCursorAndCircles(x, y) {
   gsap.to(".circle", {
-    x: mouseX,
-    y: mouseY,
+    x: x,
+    y: y,
     stagger: -0.1,
   });
 
-  gsap.set(".cursor",{
-    x: mouseX,
-    y: mouseY,
+  gsap.set(".cursor", {
+    x: x,
+    y: y,
   });
-});
+}
 
-// ページ全体がクリックされたときに新しいページにリダイレクト
-document.body.addEventListener('click', function() {
-  window.location.href = 'https://taketoichi.github.io/GroupingMain/'; // ここに次のページのURLを入れる
-});
+function handleTouchEnd() {
+  const currentTime = new Date().getTime();
+  const tapLength = currentTime - lastTapTime;
+  if (tapLength < 300 && tapLength > 0) {
+    // ダブルタップ検出
+    window.location.href = 'http://127.0.0.1:5500/indexHP.html';
+  }
+  lastTapTime = currentTime;
+  setTimeout(() => {
+    touchDetected = false;
+  }, 300);
+}
+
+function handleClick() {
+  if (!touchDetected) {
+    // クリックイベント
+    window.location.href = 'http://127.0.0.1:5500/indexHP.html';
+  }
+}
