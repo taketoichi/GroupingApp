@@ -76,3 +76,25 @@
   position: absolute;
   bottom: 30%;
 }
+
+@media screen and (max-width: 768px) {
+  /* タブレットサイズのスタイル */
+  .content h1 {
+      font-size: 250%;
+  }
+  .content h2 {
+      font-size: 100%;
+  }
+  /* その他のスタイル調整 */
+}
+
+@media screen and (max-width: 480px) {
+  /* スマートフォンサイズのスタイル */
+  .content h1 {
+      font-size: 250%;
+  }
+  .content h2 {
+      font-size: 100%;
+  }
+  /* その他のスタイル調整 */
+}
