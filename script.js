@@ -16,5 +16,5 @@ document.addEventListener("mousemove", (e) => {
 
 // ページ全体がクリックされたときに新しいページにリダイレクト
 document.body.addEventListener('click', function() {
-  window.location.href = 'http://127.0.0.1:5500/indexHP.html'; // ここに次のページのURLを入れる
+  window.location.href = 'https://taketoichi.github.io/GroupingMain/'; // ここに次のページのURLを入れる
 });
