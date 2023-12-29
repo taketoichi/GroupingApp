@@ -1,0 +1,78 @@
+* {  
+  margin: 0;
+  padding: 0;
+}
+
+.circles {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fadcf4;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle1 {
+  background-color: rgb(100, 100, 255);
+  width: 630px;
+  height: 630px;
+  margin: -315px 0 0 -315px;
+}
+
+.circle2 {
+  background-color: rgb(255, 158, 227);
+  width: 420px;
+  height: 420px;
+  z-index: 1;
+  margin: -220px 0 0 -220px;
+
+}
+
+.circle3 {
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+  z-index: 2;
+  margin: -100px 0 0 -100px;
+}
+
+.cursor {
+  position: fixed;
+  background-color: rgba(0, 0, 72, 0.725);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: -7.5px 0 0 -7.5px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+    top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  mix-blend-mode: screen;
+  z-index: 15;
+  font-size: 160%;
+}
+
+.content h1 {
+  font-size: 12rem;
+}
+
+.content h2 {
+  font: optional;
+  position: absolute;
+  bottom: 30%;
+}
